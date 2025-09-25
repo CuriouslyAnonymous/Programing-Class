@@ -1,0 +1,29 @@
+START
+DISPLAY game instructions
+DO
+    SET random_number = random value between 0 and 100
+    SET attempts = 0
+    WHILE attempts < 10
+        PROMPT user for guess
+        IF input invalid THEN
+            DISPLAY error, continue loop
+        ENDIF
+        attempts = attempts + 1
+        IF guess == random_number THEN
+            DISPLAY success message with attempts
+            BREAK loop
+        ELSE
+            IF guess < random_number THEN
+                DISPLAY "Too low"
+            ELSE
+                DISPLAY "Too high"
+            ENDIF
+            IF attempts == 10 THEN
+                DISPLAY failure message with correct number
+            ENDIF
+        ENDIF
+    ENDWHILE
+    PROMPT "Play again? (y/n)"
+WHILE user chooses yes
+DISPLAY "Completed by, Aldo Dillard Jefferson"
+END
